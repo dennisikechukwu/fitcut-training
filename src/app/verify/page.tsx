@@ -1,7 +1,7 @@
 "use client"; // Important: mark as client component
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { ACCESS_PASSWORD } from "@/utils/password";
 
 export default function Verify() {
@@ -29,6 +29,7 @@ export default function Verify() {
 
   return (
     <div className="min-h-screen flex items-center justify-center  px-4">
+      <Suspense>
       <form
         onSubmit={handleSubmit}
         className="bg-white p-10 rounded shadow-lg w-full max-w-md"
@@ -49,6 +50,7 @@ export default function Verify() {
           ACCESS PLAN
         </button>
       </form>
+      </Suspense>
     </div>
   );
 }
