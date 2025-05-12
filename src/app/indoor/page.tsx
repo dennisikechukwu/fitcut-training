@@ -126,7 +126,7 @@ const workouts = [
 // Component
 const Indoor = () => {
   return (
-    <section className='w-full'>
+    <section className=''>
       {/* Header Section */}
       <div className='p-10 bg-black flex flex-col items-center text-white space-y-5'>
         <h1 className='text-center text-2xl lg:text-3xl font-bold'>
@@ -166,31 +166,31 @@ const Indoor = () => {
         <h2 className='text-3xl font-bold font-sans'>📌 Key Features:</h2>
         <ul className='mt-4 space-y-2 list-disc text-left px-6'>
           {keyFeatures.map((feature, idx) => (
-            <li key={idx} className='max-w-md mx-auto'>{feature}</li>
+            <li key={idx} className=' mx-auto'>{feature}</li>
           ))}
         </ul>
       </div>
 
       {/* Plan Overview */}
-      <div className='p-6 mt-6 text-center'>
-        <h2 className='text-2xl font-bold font-sans'>🏋️‍♂️ 4-6 Day Indoor Workout Plan (1 Hour Per Session)</h2>
-        <ul className='mt-4 space-y-2 list-disc text-left max-w-md mx-auto'>
+      <div className='mt-6 w-full flex flex-col items-center'>
+        <h2 className='text-2xl font-bold font-sans text-center'>🏋️‍♂️ 4-6 Day Indoor Workout Plan (1 Hour Per Session)</h2>
+        <ul className='mt-4 space-y-2 list-disc text-center px-6 max-w-2xl'>
           {planOverview.map((item, idx) => (
-            <li key={idx}>{item.label}: {item.value}</li>
+            <li key={idx} className='list-disc text-left'>{item.label}: {item.value}</li>
           ))}
         </ul>
       </div>
 
       {/* Daily Workouts */}
       {workouts.map((day, dayIdx) => (
-        <div key={dayIdx} className='p-6 mt-6 flex flex-col items-center'>
+        <div key={dayIdx} className='p-6 mt-7 flex flex-col items-center'>
           <h2 className='text-2xl font-bold font-sans text-center'>🗓️ {day.title}</h2>
           <p className='mt-2'>🔥 Calories Burned: {day.calories}</p>
 
           {day.steps.map((step, stepIdx) => (
             <div key={stepIdx} className='mt-6 w-full flex flex-col items-center'>
               <h3 className='text-xl lg:text-2xl font-bold font-sans text-center'>{step.title}</h3>
-              <ul className='mt-4 space-y-2 list-disc text-left px-6 max-w-2xl'>
+              <ul className='mt-4 space-y-3 list-disc text-left px-6 '>
                 {step.items.map((item, itemIdx) => (
                   <li key={itemIdx}>{item}</li>
                 ))}
@@ -201,12 +201,65 @@ const Indoor = () => {
       ))}
       <div className='p-6 mt-6 flex flex-col justify-center items-center'>
         <h1 className='text-center text-3xl  font-bold font-sans'>🛑 Important Safety Tips</h1>
-        <div className='space-y-2 font-sans mt-4'>
+        <div className='space-y-2 font-sans mt-4 '>
           <p>✅ Modify exercises as needed—avoid pain or discomfort</p>
           <p>✅ Keep movements slow & controlled—prevents strain</p>
           <p> ✅ Use a sturdy chair or wall for support if needed</p>
           <p> ✅ Stay hydrated & listen to your body</p>
         </div>
+        </div>
+
+        <div className='p-10 bg-black flex flex-col items-center text-white space-y-5 mt-10'>
+        <h1 className='text-center text-2xl lg:text-3xl font-bold'>
+          The Indoor Workout Plan <br />  (Modified for Knee Pain, Back Pain, or Heart Issues)
+        </h1>
+        <div className='flex items-center gap-5'>
+          <div className='border-2 rounded-full border-white'>
+            <Image
+              src={author.image}
+              alt='Author'
+              width={130}
+              height={130}
+              className='rounded-full h-[130px] w-[130px] object-cover max-sm:h-[90px] max-sm:w-[112px]'
+            />
+          </div>
+          <div>
+            <p>
+              Written by: <span className='font-semibold'>{author.name}</span>
+            </p>
+            <p>
+              Last updated: <span className='font-semibold'>{author.date}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <p className='mt-6 py-3 px-6 lg:px-10 text-center text-md lg:text-xl font-sans'>
+      This version <span className='font-bold'>burns fat while being safe for joints, back, and heart health</span>. It’s <span className='font-bold'>low-impact, beginner-friendly, and easy to do at home</span> with minimal equipment (chair, resistance bands, or household items).
+      </p>
+      <div className='p-6 mt-7 flex flex-col justify-start items-center'>
+        <h1 className='text-center text-3xl  font-bold font-sans'>🛑 Modifications for Common Conditions</h1>
+        <div className='mt-6'>
+          <h1 className='text-2xl font-bold font-sans '>1️⃣ The Knee Pain (Arthritis, Joint Pain)</h1>
+          <div className='mt-4 space-y-2.5 text-left'>
+            <p>❌ Avoid: Deep squats, lunges, high-impact moves</p>
+            <p>✅ Do Instead: Seated exercises, chair-assisted movements, slow step-ups</p>
+          </div>
+        </div>
+        <div className='mt-6 flex flex-col items-center'>
+          <h1 className='text-2xl font-bold font-sans  '>2️⃣ Back Pain (Lower Back Strain, Herniated Disc, Sciatica)</h1>
+          <div className='mt-4 space-y-2.5 text-left'>
+            <p>❌ Avoid: Bending forward, unsupported core exercises, excessive twisting</p>
+            <p>✅ Do Instead: Seated core work, standing exercises, wall support</p>
+          </div>
+        </div>
+        <div className='mt-6 flex flex-col items-center'>
+          <h1 className='text-2xl font-bold font-sans '>3️⃣ Heart Issues (High Blood Pressure, Heart Disease)</h1>
+          <div className='mt-4 space-y-2.5 text-left'>
+            <p>❌ Avoid: High-intensity cardio, sudden movement changes, holding breath during exercises</p>
+            <p>✅ Do Instead: Steady-paced movements, controlled breathing, moderate intensity</p>
+          </div>
+        </div>
+        <h2 className='text-2xl font-bold font-sans text-center mt-8'>🏋️‍♂️ 4-6 Day Indoor Workout Plan (Modified for Safety & Effectiveness)</h2>
         </div>
     </section>
   )
