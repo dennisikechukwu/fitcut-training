@@ -123,6 +123,102 @@ const workouts = [
   },
 ]
 
+const workout = [
+  {
+    title: 'Day 1 & Day 4 – Low-Impact Strength & Cardio',
+    calories: '400-600',
+    steps: [
+      {
+        title: '1️⃣ Warm-Up (10 mins, Joint-Friendly)',
+        items: [
+          'Seated or standing march (3 mins)',
+          'Seated or standing leg swings (10 per leg, gentle motion)',
+          'Arm circles & shoulder rolls (30 sec each)',
+        ],
+      },
+      {
+        title: '2️⃣ Low-Impact Cardio (20 mins, Modify as Needed)',
+        items: [
+          'March in place (slow pace, 5 mins)',
+          'Step-ups on a low step (use a sturdy chair for support, 5 mins)',
+          'Seated or standing knee lifts (slow & controlled, 5 mins)',
+          'Cool-down march (slow, 5 mins)',
+        ],
+      },
+      {
+        title: '3️⃣ Strength Training (20 mins, Joint & Heart-Safe)',
+        items: [
+          'Seated or standing wall push-ups – 3 sets x 10 reps',
+          'Seated or standing bicep curls (use light resistance) – 3 sets x 12 reps',
+          'Chair-assisted squats (shallow depth, hold onto support) – 3 sets x 10 reps',
+          'Glute bridges (on floor, knee-friendly) – 3 sets x 12 reps',
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Day 2 & Day 5 – Endurance Cardio & Core Workout',
+    calories: '500-700',
+    steps: [
+      {
+        title: '1️⃣ Warm-Up (10 mins, Joint-Friendly)',
+        items: [
+          'Gentle side bends (30 sec per side)',
+          'March in place (2 mins, slow pace)',
+        ],
+      },
+      {
+        title: '2️⃣ Cardio Routine (30-40 mins, Modify as Needed)',
+        items: [
+          'Steady-paced march (5 mins, no jumping)',
+          'Slow side steps (5 mins, avoid quick movements)',
+          'Seated or standing step-ups (5 mins, slow pace)',
+          'Seated or wall-assisted modified jumping jacks (5 mins, if comfortable)',
+        ],
+      },
+      {
+        title: '3️⃣ Core Strengthening (10 mins, Back-Friendly)',
+        items: [
+          'Seated knee lifts – 3 sets x 10 reps',
+          'Standing side bends – 3 sets x 12 reps per side',
+          'Wall plank hold – 3 sets x 20 seconds',
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Day 3 & Day 6 – Strength & Mobility',
+    calories: '450-650',
+    steps: [
+      {
+        title: '1️⃣ Warm-Up (10 mins, Gentle Movements)',
+        items: [
+          'Brisk march in place (5 mins, moderate pace)',
+          'Gentle stretching (5 mins, slow & steady)',
+        ],
+      },
+      {
+        title: '2️⃣ Strength Routine (30 mins, Low-Impact)',
+        items: [
+          'Seated or standing push-ups against a wall – 3 sets x 10 reps',
+          'Step-ups (on a low step, slow & steady) – 3 sets x 8 reps per leg',
+          'Seated or standing leg lifts – 3 sets x 12 reps per leg',
+          'Seated dips (on a chair, slow & controlled) – 3 sets x 10 reps',
+        ],
+      },
+      {
+        title: '3️⃣ Flexibility & Mobility (10-15 mins, Cool Down & Stretching)',
+        items: [
+          'Seated forward bend (30 sec, stretches back & legs)',
+          'Seated or standing quad stretch (30 sec per leg, knee-friendly)',
+          'Neck and shoulder stretches (30 sec each)',
+        ],
+      },
+    ],
+  },
+];
+
+
 // Component
 const Indoor = () => {
   return (
@@ -260,6 +356,33 @@ const Indoor = () => {
           </div>
         </div>
         <h2 className='text-2xl font-bold font-sans text-center mt-8'>🏋️‍♂️ 4-6 Day Indoor Workout Plan (Modified for Safety & Effectiveness)</h2>
+        </div>
+
+        {workout.map((day, dayIdx) => (
+        <div key={dayIdx} className='p-6 mt-7 flex flex-col items-center'>
+          <h2 className='text-2xl font-bold font-sans text-center'>🗓️ {day.title}</h2>
+          <p className='mt-2'>🔥 Calories Burned: {day.calories}</p>
+
+          {day.steps.map((step, stepIdx) => (
+            <div key={stepIdx} className='mt-6 w-full flex flex-col items-center'>
+              <h3 className='text-xl lg:text-2xl font-bold font-sans text-center'>{step.title}</h3>
+              <ul className='mt-4 space-y-3 list-disc text-left px-6 '>
+                {step.items.map((item, itemIdx) => (
+                  <li key={itemIdx}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      ))}
+      <div className='p-6 mt-6 flex flex-col justify-center items-center'>
+        <h1 className='text-center text-3xl  font-bold font-sans'>🛑 Important Safety Tips</h1>
+        <div className='space-y-2 font-sans mt-4 '>
+          <p>✅ Modify exercises as needed—avoid pain or discomfort</p>
+          <p>✅ Keep movements slow & controlled—prevents strain</p>
+          <p> ✅ Use a sturdy chair or wall for support if needed</p>
+          <p> ✅ Stay hydrated & listen to your body</p>
+        </div>
         </div>
     </section>
   )

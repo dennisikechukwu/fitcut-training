@@ -4,7 +4,6 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 import { ACCESS_PASSWORD } from "@/utils/password";
 
-// This component contains the logic that uses useSearchParams
 function VerifyContent() {
   const [input, setInput] = useState("");
   const [error, setError] = useState("");
@@ -22,7 +21,7 @@ function VerifyContent() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (input === ACCESS_PASSWORD) {
-      router.push(nextPath);
+      router.replace(nextPath); // Prevent going back to password page
     } else {
       setError("Incorrect password");
     }
@@ -52,10 +51,9 @@ function VerifyContent() {
   );
 }
 
-// The main component that wraps the content in Suspense
 export default function Verify() {
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
       <Suspense fallback={<div>Loading...</div>}>
         <VerifyContent />
       </Suspense>
