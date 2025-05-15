@@ -218,7 +218,7 @@ const Outdoor = () => {
             
                   {/* Header Section */}
                   <div className='p-10 bg-black flex flex-col items-center text-white space-y-5'>
-                    <h1 className='text-center text-2xl lg:text-3xl font-bold'>
+                    <h1 className='text-center text-xl lg:text-3xl font-bold'>
                        Outdoor Workout Plan <br /> for Weight Loss (Obese & Joint-Friendly)
                     </h1>
                     <div className='flex items-center gap-5'>
