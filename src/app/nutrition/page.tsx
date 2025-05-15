@@ -76,6 +76,72 @@ const meals = [
   },
 ];
 
+const mealss = [
+  {
+    title: '🌿 Day 1',
+    meals: {
+      breakfast: 'Oatmeal with chia seeds, almond butter, and blueberries',
+      lunch: 'Quinoa & roasted chickpea salad with tahini dressing',
+      snack: 'Handful of walnuts + an apple',
+      dinner: 'Stir-fried tofu with brown rice and steamed broccoli',
+    },
+  },
+  {
+    title: '🥑 Day 2',
+    meals: {
+      breakfast: 'Whole wheat toast with avocado, hemp seeds, and cherry tomatoes',
+      lunch: 'Lentil soup with whole grain crackers',
+      snack: 'Carrot sticks with hummus',
+      dinner: 'Baked sweet potato with black beans, salsa, and guacamole',
+    },
+  },
+  {
+    title: '🍠 Day 3',
+    meals: {
+      breakfast: 'Chia pudding with coconut milk & raspberries',
+      lunch: 'Vegan chickpea tuna salad (mashed chickpeas, lemon, celery) with whole grain bread',
+      snack: 'Almonds + dark chocolate square',
+      dinner: 'Grilled tempeh with roasted Brussels sprouts and quinoa',
+    },
+  },
+  {
+    title: '🌰 Day 4',
+    meals: {
+      breakfast: 'Smoothie (spinach, banana, flaxseeds, almond milk)',
+      lunch: 'Buddha bowl (brown rice, black beans, avocado, sautéed kale, tahini drizzle)',
+      snack: 'Handful of sunflower seeds + dried cranberries',
+      dinner: ' Mushroom and lentil stir-fry with quinoa',
+    },
+  },
+  {
+    title: '🥕 Day 5',
+    meals: {
+      breakfast: 'Whole wheat toast with peanut butter & banana',
+      lunch: 'Quinoa & black bean salad with avocado dressing',
+      snack: 'Carrot sticks + guacamole',
+      dinner: 'Stir-fried tofu with mixed veggies and brown rice',
+    },
+  },
+  {
+    title: '🍛 Day 6',
+    meals: {
+      breakfast: 'Chia flaxseed pancakes with almond butter & strawberries',
+      lunch: 'Vegan chili (black beans, lentils, tomatoes, corn) with whole wheat bread',
+      snack: 'Coconut yogurt with granola',
+      dinner: 'Stuffed bell peppers with quinoa, kidney beans, and tahini sauce',
+    },
+  },
+  {
+    title: '🥗 Day 7',
+    meals: {
+      breakfast: 'Green smoothie (kale, banana, chia seeds, almond milk)',
+      lunch: 'Vegan wrap (whole wheat tortilla, hummus, spinach, grilled tofu)',
+      snack: 'Roasted chickpeas + an orange',
+      dinner: 'Spaghetti squash with lentil marinara sauce',
+    },
+  },
+];
+
 
 const Nutrition = () => {
   return (
@@ -174,6 +240,56 @@ const Nutrition = () => {
         </div>
       </div>
 
+      <p className='mt-6 py-3 px-6 lg:px-10 text-center text-md lg:text-xl font-sans'>
+        This <span className='font-bold'>7-day vegan meal plan</span> is designed to <span className='font-bold'>support weight loss, reduce inflammation, and boost heart and joint health</span>. It includes <span className='font-bold'>plant-based proteins, healthy fats, fiber-rich carbs, and anti-inflammatory foods</span> like <span className='font-bold'>turmeric, ginger, flaxseeds, and leafy greens</span>.
+      </p>
+      <div className='p-6 mt-6 flex flex-col justify-center items-center'>
+             <h1 className='text-center text-2xl lg:text-3xl  font-bold font-sans'>🛑 Foods to Limit:</h1>
+             <div className='space-y-3 font-sans mt-4 '>
+             <p>❌ Refined carbs & sugars (white bread, pastries, soda) – Can cause weight gain and inflammation</p>
+             <p>❌ Processed vegan junk food (vegan cheese, fake meats high in additives) – Often high in sodium and unhealthy fats</p>
+             <p> ❌ Excess salt – Can lead to bloating and high blood pressure</p>
+        </div>
+        </div>
+
+        
+             <div className='p-6 mt-6 flex flex-col justify-center items-center'>
+             <h1 className='text-center text-2xl lg:text-3xl  font-bold font-sans'>✅ Best Foods for Weight Loss & Joint/Heart Health:</h1>
+             <div className='space-y-3  font-sans mt-4 '>
+             <p>✔ Plant Proteins: Lentils, chickpeas, tofu, tempeh, quinoa</p>
+             <p>✔ Healthy Fats: Avocados, nuts, seeds, olive oil</p>
+             <p> ✔ High-Fiber Carbs: Oats, brown rice, sweet potatoes, whole grains</p>
+                <p> ✔ Anti-Inflammatory Foods: Berries, turmeric, ginger, leafy greens, flaxseeds</p>
+        </div>
+        </div>
+
+        <h2 className='lg:text-3xl text-xl font-bold font-sans text-center mt-8'>🗓️ 7-Day Vegan Meal Plan (1,500-1,800 Calories/day)</h2>
+
+          <div className='p-6 mt-6 flex flex-col items-center'>
+  {mealss.map((meal, mealIdx) => (
+    <div key={mealIdx} className='mb-8  '>
+      <h1 className='text-center text-2xl lg:text-3xl font-bold font-sans'>
+        {meal.title}
+      </h1>
+      <div className='space-y-2 font-sans mt-4 text-base lg:text-lg flex flex-col items-center'>
+        <p className=''><strong>Breakfast:</strong> {meal.meals.breakfast}</p>
+        <p className='text-l'><strong>Lunch:</strong> {meal.meals.lunch}</p>
+        <p className='text-le'><strong>Snack:</strong> {meal.meals.snack}</p>
+        <p className='text-le'><strong>Dinner:</strong> {meal.meals.dinner}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
+    <div className='p-6 mt-6 flex flex-col justify-center items-center'>
+        <h1 className='text-center text-3xl  font-bold font-sans'>🍶 Hydration & Extras:</h1>
+        <div className='space-y-2 font-sans mt-4 '>
+          <p>💧 Drink at least 8 cups of water daily</p>
+          <p>🍵 Add green tea or turmeric tea (anti-inflammatory)</p>
+          <p> 🍋 Lemon water in the morning for digestion</p>
+         
+        </div>
+        </div>
     </section>
   )
 }
