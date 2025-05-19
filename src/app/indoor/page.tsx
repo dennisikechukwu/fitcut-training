@@ -384,6 +384,11 @@ const Indoor = () => {
           <p> ✅ Stay hydrated & listen to your body</p>
         </div>
         </div>
+
+        <div className='mt-6 flex flex-col justify-center items-center'>
+            <button className='text-center flex justify-center items-center text-2xl font-bold tracking-wide font-sans bg-black text-white py-3.5 px-4 rounded-full'>Check out some videos</button>
+
+        </div>
     </section>
   )
 }

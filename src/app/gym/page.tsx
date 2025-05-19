@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 // Author Info
 const author = {
@@ -365,6 +366,13 @@ const Gym = () => {
           <p> ✅ Stay Hydrated – Reduces risk of dizziness, overheating</p>
           <p> ✅ Monitor Heart Rate – Stay in a safe range, take breaks</p>
         </div>
+        </div>
+
+        <div className='mt-6 flex flex-col justify-center items-center'>
+          <Link href="/gym-videos">
+            <button className='text-center flex justify-center items-center text-2xl font-bold tracking-wide font-sans bg-black text-white py-3.5 px-4 rounded-full'>Check out some videos</button>
+            </Link>
+
         </div>
     </section>
   )
