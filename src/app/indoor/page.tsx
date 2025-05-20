@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 // Author Info
 const author = {
@@ -386,8 +387,9 @@ const Indoor = () => {
         </div>
 
         <div className='mt-6 flex flex-col justify-center items-center'>
+           <Link href="/indoor-videos">
             <button className='text-center flex justify-center items-center text-2xl font-bold tracking-wide font-sans bg-black text-white py-3.5 px-4 rounded-full'>Check out some videos</button>
-
+           </Link>
         </div>
     </section>
   )
