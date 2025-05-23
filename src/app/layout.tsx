@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { Providers } from "./providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Fitcut Training",
-  description: "A monitized training website",
+  description: "A monetized training website",
 };
 
 export default function RootLayout({
@@ -29,9 +30,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Nav/>
-        {children}
-        <Footer/>
+        <Providers>
+          <Nav />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
