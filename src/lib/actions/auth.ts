@@ -1,8 +1,9 @@
 "use server";
 
 import { signIn,signOut } from "next-auth/react";
+
 export const login = async () => {
-  await signIn("google", { redirectTo: "/" });
+  await signIn("Google", { redirectTo: "/" });
 };
 
 export const logout = async () => {
